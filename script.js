@@ -132,6 +132,7 @@ function drawGrids(gridNumbers){
             cell.addEventListener("mouseover", () => {
                 if (isDrawing) {
                     if (opacityDiv) {
+                        clear = false;
                         opacityDiv.remove();
                         opacityDiv = null;
                     }
