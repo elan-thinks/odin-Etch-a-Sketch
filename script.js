@@ -1,7 +1,9 @@
 let grid = document.querySelector(".grids");
-let getGridNumbers=document.querySelector("#getGridNumbers");
-let build =document.getElementById('build');
+let getGridNumbers=document.querySelector("#resolution");
+// let build =document.getElementById('build');
 let erase = document.getElementById('eraseIcon');
+
+let showresolution = document.getElementById('showresolution');
 
 let opacityIcon = document.getElementById('opacityIcon');
 let changeColor = document.getElementById('changeColor');
@@ -11,16 +13,9 @@ let welcomeWindow = document.querySelector('.welcome');
 let wrapper= document.querySelector('.container');
 const downloadBtn = document.getElementById('download');
 
-downloadBtn.addEventListener('click', () => {
-    html2canvas(grid).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'etch-a-sketch.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-    });
-});
 
 
+console.log("here " + getGridNumbers.value)
 let red =0;
 let blue =0;
 let green =0;
@@ -32,6 +27,7 @@ let count =0;
 let bgColor =changeColor.value;
 let useMixedColor = false;
 let useOpacity = false;
+
 
 
 function defaultGrid(){
@@ -55,15 +51,13 @@ function defaultGrid(){
   welcome();
 
 defaultGrid()
-
-
-
-
-
-build.addEventListener('click',()=>{
-    grid.innerHTML=``;
-    gridNumbers = getGridNumbers.value;
-    drawGrids(gridNumbers);
+downloadBtn.addEventListener('click', () => {
+    html2canvas(grid).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'etch-a-sketch.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
 });
 
 document.body.addEventListener("mousedown", () => (isDrawing = true));
@@ -110,10 +104,18 @@ erase.addEventListener('click',()=>{
      console.log(count +"clicked" +clear);
 });
 
+getGridNumbers.addEventListener("input", () => {
+    grid.innerHTML = ''; 
+    gridNumbers = parseInt(getGridNumbers.value);
+    drawGrids(gridNumbers)
+    console.log(gridNumbers)
 
+});
 function drawGrids(gridNumbers){
+   
 
     if(gridNumbers >=40 && gridNumbers <=100){
+        showresolution.innerText=gridNumbers;
         for(let i=0; i<gridNumbers; i++){
             let colGrid=document.createElement('div');
             colGrid.classList.add("allGrid");
