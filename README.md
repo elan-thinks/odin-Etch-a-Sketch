@@ -61,9 +61,7 @@ Etch-a-Sketch/
 
 ---
 
-## 🎥 Demo (Optional)
-
-## 🖼️ Demo
+## 🎥 Demo 
 
 ![Etch-a-Sketch Demo](./images/etch-demo.gif)
 ---
