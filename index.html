@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>🎨 Etch-a-Sketch</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="welcome">
+            <img src="./images/etch.png">
+            <h1>🎨 Etch-a-Sketch</h1>
+        </div>
+        <div class="container hidden">
+            <div class="functionsDiv">
+                <button id="build">Grid</button>
+                <input id="getGridNumbers" type="number">
+                <input type="color" id="changeColor">
+                <img id="eraseIcon" src="./images/eraser.png">
+                <img src="./images/opacity.png" id="opacityIcon">
+                <img  id="mixedColor" src="./images/mixColor.png">
+            </div>
+            <div class="grids"></div>
+            <div class="decorate">
+                <button>👏</button>
+                <button>👏</button>
+             </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
