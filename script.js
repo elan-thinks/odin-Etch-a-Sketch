@@ -9,6 +9,16 @@ let changeColor = document.getElementById('changeColor');
 let mixedColor = document.getElementById('mixedColor');
 let welcomeWindow = document.querySelector('.welcome');
 let wrapper= document.querySelector('.container');
+const downloadBtn = document.getElementById('download');
+
+downloadBtn.addEventListener('click', () => {
+    html2canvas(grid).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'etch-a-sketch.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
+});
 
 
 let red =0;

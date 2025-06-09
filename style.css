@@ -29,7 +29,7 @@ body{
     display: flex;
     width: 80%;
     gap: 1%;
-    margin-bottom: 9px;
+    /* margin-bottom: 9px; */
     align-items: center;
     justify-content: center;
 }
@@ -84,7 +84,9 @@ input{
     min-height: 45vh;
     border-radius: 30px;
     box-sizing: border-box;
-    border: 3px solid rgb(106, 107, 112);
+    /* border-collapse: collapse; */
+
+    /* border: 3px solid rgb(106, 107, 112); */
     background-color: rgb(189, 177, 177);
     box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -95,20 +97,21 @@ input{
     width: 3.3%;
     min-width: 2px;
     height: 100%;
-    border: transparent;
+     margin: 0;
+    padding: 0;
+   border: none;
 }
 .cell{
     position: relative;
     width: 95%;
     min-width: 2px;
     min-height: 1px;
-    border: 0px solid rgb(163, 163, 153);
-    border-bottom: none;
+    border: hidden;
     cursor: pointer;
-    border: transparent;
+    
 }
 .cell:hover{
-    background-color: rgb(34, 32, 32);
+    /* background-color: rgb(34, 32, 32); */
     box-shadow: 2px 3px 4px 2px black;
     animation-name: ink;
     transition: 5.5sec;
@@ -116,7 +119,6 @@ input{
 
     border-radius: 50% 20% 67% 33%;  
   box-shadow: 0 0 2px #ccc;
-
     transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
 }
 
@@ -182,4 +184,11 @@ input{
       opacity: 0;
     }
   }
-  
+  #download{
+    width: 4%;
+    border-radius: 12px;
+    box-shadow: 4px 6px 9px 5px rgb(163, 55, 109);
+
+    /* transform: translateY(20%); */
+
+  }
